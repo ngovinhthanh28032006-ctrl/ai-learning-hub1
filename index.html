@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Hub - Thành</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };</script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="intro-screen" class="intro-overlay">
+    <div class="intro-content">
+        <div class="logo-animation">
+            <span class="material-symbols-outlined">auto_awesome</span>
+        </div>
+        <h1>AI LEARNING HUB</h1>
+        <p class="tagline">Trợ lý học tập thông minh cho sinh viên IT</p>
+        
+        <div class="intro-features">
+            <div class="i-feature">
+                <span class="material-symbols-outlined">code</span>
+                <h3>Hỗ trợ IT</h3>
+                <p>Giải đáp C#, SQL, cấu trúc dữ liệu và thuật toán.</p>
+            </div>
+            <div class="i-feature">
+                <span class="material-symbols-outlined">translate</span>
+                <h3>Tiếng Anh B2-C1</h3>
+                <p>Luyện viết luận và giải thích ngữ pháp chuyên sâu.</p>
+            </div>
+            <div class="i-feature">
+                <span class="material-symbols-outlined">calculate</span>
+                <h3>Toán học</h3>
+                <p>Giải phương trình và trình bày bảng biểu logic.</p>
+            </div>
+        </div>
+
+        <button class="start-btn" onclick="goToAuth()">
+            Bắt đầu trải nghiệm <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+    </div>
+</div>
+
+<div id="auth-container" class="auth-overlay">
+    <div class="auth-box">
+        <h2 id="auth-title">Đăng Nhập Học Viện</h2>
+        <div class="auth-inputs">
+            <input type="text" id="username" placeholder="Tên đăng nhập">
+            <input type="password" id="password" placeholder="Mật khẩu">
+            <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu" class="hidden">
+        </div>
+        <button onclick="handleAuth()" id="auth-btn">Vào Học Ngay</button>
+        <p id="auth-switch" onclick="toggleAuthMode()">Chưa có tài khoản? <span class="highlight">Đăng ký ngay</span></p>
+    </div>
+</div>
+
+<div class="app-container">
+    <aside class="sidebar">
+        <button class="new-chat-btn" onclick="createNewThread()">
+            <span class="material-symbols-outlined">add</span> Chat mới
+        </button>
+        <div class="thread-list" id="thread-list"></div>
+    </aside>
+
+    <main class="chatbot">
+        <div class="header">
+            <span class="material-symbols-outlined">smart_toy</span>
+            <span id="user-display">TRỢ LÝ HỌC TẬP</span>
+            <button onclick="logout()" class="logout-btn"><span class="material-symbols-outlined">logout</span></button>
+        </div>
+        <div class="chat-body" id="chat-body"></div>
+        <div class="input-area">
+            <form class="chat-form" id="chat-form">
+                <textarea class="message-input" id="message-input" placeholder="Nhập câu hỏi học tập..."></textarea>
+                <button type="submit" id="send-message"><span class="material-symbols-outlined">send</span></button>
+            </form>
+        </div>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
